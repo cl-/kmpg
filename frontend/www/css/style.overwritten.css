@@ -1,6 +1,8 @@
 .bar.bar-calm, 
-.tabs-striped.tabs-background-calm .tabs {
+.tabs-striped.tabs-background-calm .tabs,
+.button.button-calm {
 	background-color: #4BB8DD;
+	border-color: transparent; 
 }
 
 .extra-header {
@@ -20,4 +22,38 @@
 .offer-header {
 	color: #fff;
 	background-color: #a88cd5;
+}
+
+.bg-trans {
+	background-image: none;
+	background-color: rgba(255, 255, 255, 0.4);;
+    border-color: transparent;
+}
+
+.border-right {
+	border-right: 2px solid white;
+}
+
+.padding-area {
+	padding: 4px 20px;
+}
+
+#loginlink {
+	text-align: center;
+}
+
+#loginlink a {
+	color: #BABABA;
+}
+
+.splash-bg {
+background-image: url(../image/SplashScreen.png); 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+}
+
+.image-container {
+	height: 200px;
+	overflow: hidden;
 }
