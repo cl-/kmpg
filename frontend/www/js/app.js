@@ -31,6 +31,14 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+  .state('app.begin', {
+      url: '/begin',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/begin.html'
+        }
+      }
+  })
 
   .state('app.explore', {
       url: '/explore',
@@ -86,5 +94,5 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/explore');
 });
