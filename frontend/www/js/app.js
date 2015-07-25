@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module("kmpg", ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,39 +25,56 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.explore', {
+      url: '/explore',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/explore.html'
+        }
+      }
+  })
+  .state('app.request', {
+      url: '/request',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/request.html'
+        }
+      }
+  })
+  .state('app.offer', {
+      url: '/offer',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/offer.html'
+        }
+      }
+  })
+  .state('app.settings', {
+      url: '/settings',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/settings.html'
+        }
+      }
+  })
+
+
+  .state('app.playlists', {
+    url: '/playlists',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/playlists.html',
+        controller: 'PlaylistsCtrl'
       }
     }
   })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
 
   .state('app.single', {
     url: '/playlists/:playlistId',
