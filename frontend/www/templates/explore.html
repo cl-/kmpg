@@ -1,5 +1,17 @@
 <ion-view view-title="Explore">
   <ion-content>
-    <h1>Explore</h1>
+      <!-- our list and list items -->
+      <ion-list>
+        <ion-item ng-repeat="offer in data.offers" ng-click="offer.firstName='qqq'">
+          {{offer.entryType}}
+          {{offer.startLat}}  {{offer.startLon}}
+          {{offer.endLat}}    {{offer.endLon}}
+
+          {{offer.firstName}}
+          {{offer.phone}}
+          {{offer.neighborhood}}
+
+        </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>
