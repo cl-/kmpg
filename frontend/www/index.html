@@ -12,18 +12,84 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
+    <!-- your app's css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- your used js -->
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/controller.main.js"></script>
   </head>
 
-  <body ng-app="starter">
+  <body ng-app="kmpg" ng-controller="MainCtrl">
     <ion-nav-view></ion-nav-view>
+
+
+
+
+<!--<script type='text/JavaScript' src='http://www.onemap.sg/API/JS/?accessKEY=xkg8VRu6Ol+gMH+SUamkRIEB7fKzhwMvfMo/2U8UJcFhdvR4yN1GutmUIA3A6r3LDhot215OVVkZvNRzjl28TNUZgYFSswOi'></script>-->
+<script src="../lib/oneMap/vendorOneMap.js"></script>
+
+
+<script language="javascript" type="text/javascript" >
+
+    function GetSearchData() {
+        //debugger;
+
+        var basicSearch = new BasicSearch;
+        var searchText = document.getElementById("txtSearchText").value
+        basicSearch.searchVal = searchText;
+        basicSearch.returnGeom = '1';
+
+        basicSearch.GetSearchResults(displayData)
+    }
+
+    function displayData(resultData){
+        //debugger;
+        var results = resultData.results;
+        if (results=='No results'){
+            document.getElementById('divResults').innerHTML = "No result(s) found";
+            return false
+        }
+        else{
+            var htmlStr = "<table>";
+            htmlStr = htmlStr + "<tr><th>Search Value </th></tr>";
+            for (var i = 0; i < results.length; i++) {
+                var row = results[i];
+                htmlStr = htmlStr + "<tr>";
+                htmlStr = htmlStr + "<td>";
+                htmlStr = htmlStr + "<a href='JavaScript:ZoomTo("+ row.X +","+ row.Y +")'>" + row.SEARCHVAL + "</a>";
+                htmlStr = htmlStr + "</td>";
+                htmlStr = htmlStr + "</tr>";
+            }
+            htmlStr = htmlStr + "</table>";
+            document.getElementById('divResults').innerHTML = htmlStr;
+        }
+    }
+
+    //add map on body load
+
+    var OneMap = new GetOneMap('divMain','SM');
+
+    function ZoomTo(xVal,yVal){
+
+        OneMap.showLocation(xVal,yVal);
+    }
+
+</script>
+
+
+
   </body>
 </html>

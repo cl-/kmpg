@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- http://www.onemap.sg/api/help/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=8,IE=9,IE=10" />
+    <title>OneMap-Add Map</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type='text/JavaScript' src='http://www.onemap.sg/API/JS?accessKEY=qo/s2TnSUmfLz+32CvLC4RMVkzEFYjxqyti1KhByvEacEdMWBpCuSSQ+IFRT84QjGPBCuz/cBom8PfSm3GjEsGc8PkdEEOEr&v=3.10&type=full'></script>
+    <script language="JavaScript" type="text/JavaScript">
+       
+        //add map with defined center location and zoom level
+        var centerPoint = "28968.103,33560.969"
+        var levelNumber = 8;
+        var OneMap = new GetOneMap('divMain', 'SM', { level: levelNumber, center: centerPoint });
+
+        function GetCurrentLevel() {
+            alert("Current Level:" + OneMap.map.getLevel())
+        }
+
+    </script>
+</head>
+<body class="tundra">
+    <table>
+        <tr>
+            <td>
+                <div id="divMain" style='width: 450px; height: 450px;'>
+                </div>
+            </td>
+            <td>
+                Map navigation using mouse:
+                <ul>
+                    <li>Drag to pan</li>
+                    <li>Mouse Scroll Forward to zoom in</li>
+                    <li>Mouse Scroll Backward to zoom out</li>
+                    <li>Use Arrow keys to pan</li>
+                    <li>Double Click to Center and Zoom in</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <input id="Button3" type="button" style="width: 150px" value="Current Map Level"
+        onclick="GetCurrentLevel()" />
+</body>
+</html>
+

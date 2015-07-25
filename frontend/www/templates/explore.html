@@ -1,0 +1,31 @@
+<ion-view view-title="Explore">
+
+  <ion-content>
+      <!-- our list and list items -->
+      <ion-list>
+        <ion-item ng-repeat="offer in data.offers" ng-click="offer.firstName='qqq'">
+          {{offer.entryType}}
+          {{offer.startLat}}  {{offer.startLon}}
+          {{offer.endLat}}    {{offer.endLon}}
+
+          {{offer.firstName}}
+          {{offer.phone}}
+          {{offer.neighborhood}}
+
+        </ion-item>
+      </ion-list>
+  </ion-content>
+
+  <ion-tabs class="tabs-neutral tabs-icon-only"> <!-- <ion-tabs class="tabs-positive tabs-icon-only"> -->
+    <ion-tab title="All" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+    </ion-tab>
+
+    <ion-tab title="Requests" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    </ion-tab>
+
+    <ion-tab title="Events" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+    </ion-tab>
+
+  </ion-tabs>
+
+</ion-view>
