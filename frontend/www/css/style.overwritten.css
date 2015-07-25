@@ -6,3 +6,18 @@
 .extra-header {
 	top: 100px;
 }
+
+.request-header {
+	color: #fff;
+	background-color: #f58410;
+}
+
+.event-header {
+	color: #fff;
+	background-color: #02baf2;
+}
+
+.offer-header {
+	color: #fff;
+	background-color: #a88cd5;
+}
