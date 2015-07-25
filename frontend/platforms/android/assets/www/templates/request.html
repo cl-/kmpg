@@ -1,0 +1,21 @@
+<ion-view view-title="Add Request">
+  <ion-content>
+    <div class="list">
+
+        <label class="item item-input">
+          <textarea ng-model="newReq.entryType" placeholder="Type: eg Ride, Tuition"></textarea>
+        </label>
+        <div class="row" ng-show="['ride'].indexOf(newReq.entryType.toLowerCase()) != -1">
+          <button class="col col-50">Start Destination</button>
+          <button class="col col-50">End Destination</button>
+        </div>
+        <label class="item item-input">
+          <textarea placeholder="Comments"></textarea>
+        </label>
+
+        <input type="text" placeholder="First Name" ng-model="user.firstName" hidden class="force-hidden">
+        <input type="text" placeholder="Last Name" ng-model="user.firstName" hidden class="force-hidden">
+
+    </div>
+  </ion-content>
+</ion-view>
