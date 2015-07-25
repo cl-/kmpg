@@ -19,6 +19,16 @@
 	background-color: #02baf2;
 }
 
+.center-text {
+	text-align: center;
+}
+
+.moon-header {
+	color: #4A4A4A;
+	font-family: 'moonbold';
+	font-size: 24px;
+}
+
 .offer-header {
 	color: #fff;
 	background-color: #a88cd5;
@@ -35,7 +45,11 @@
 }
 
 .padding-area {
-	padding: 4px 20px;
+	padding: 10px 20px;
+}
+
+.large-padding-area {
+	padding: 60px 20px;
 }
 
 #loginlink {
@@ -46,14 +60,28 @@
 	color: #BABABA;
 }
 
+.bottom-border {
+	border: none;
+	border-bottom: 3px solid #BABABA;
+}
+
 .splash-bg {
-background-image: url(../image/SplashScreen.png); 
--webkit-background-size: cover;
--moz-background-size: cover;
-background-size: cover;
+	background-image: url(../image/SplashScreen.png); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.singapore-bg {
+	border: none;
+	background-image: url(../image/singapore.svg); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;	
 }
 
 .image-container {
 	height: 200px;
 	overflow: hidden;
+	border: none
 }
