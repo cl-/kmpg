@@ -1,31 +1,59 @@
 <ion-view view-title="Explore">
 
-  <ion-content>
+  <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item active" href="#">
+        ALL
+      </a>
+      <a class="tab-item" href="#">
+        REQUESTS
+      </a>
+      <a class="tab-item" href="#">
+        EVENTS
+      </a>
+    </div>
+  </div>
+
+  <ion-content class="extra-header">
       <!-- our list and list items -->
       <ion-list>
-        <ion-item ng-repeat="offer in data.offers" ng-click="offer.firstName='qqq'">
-          {{offer.entryType}}
-          {{offer.startLat}}  {{offer.startLon}}
-          {{offer.endLat}}    {{offer.endLon}}
 
-          {{offer.firstName}}
-          {{offer.phone}}
-          {{offer.neighborhood}}
+      <div class="list card" ng-repeat="offer in data.offers" ng-click="">
 
-        </ion-item>
+        <div class="item item-avatar">
+          <img src="../image/{{offer.firstName}}.png">
+          <h2>{{offer.firstName}}</h2>
+          <p>{{offer.neighborhood}}</p>
+        </div>
+
+        <div class="item item-body">
+          <p>
+            Hey guys, PSLE is just around the corner and I am trying to find a kind sould who is willing to
+            tutor my kid, who’s struggling really hard in some subejcts like Math & Chinese. Willing to
+            pay as well. Pls message me if interested.
+          </p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Responses</a>
+          </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Respond
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-ios-heart-outline"></i>
+            Like This
+          </a>
+        </div>
+
+      </div>
+
       </ion-list>
+
+
   </ion-content>
-
-  <ion-tabs class="tabs-neutral tabs-icon-only"> <!-- <ion-tabs class="tabs-positive tabs-icon-only"> -->
-    <ion-tab title="All" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
-    </ion-tab>
-
-    <ion-tab title="Requests" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-    </ion-tab>
-
-    <ion-tab title="Events" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
-    </ion-tab>
-
-  </ion-tabs>
 
 </ion-view>
