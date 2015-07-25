@@ -49,11 +49,7 @@
 }
 
 .large-padding-area {
-<<<<<<< HEAD
-	padding: 60px 20px;
-=======
 	padding: 60px 20px 10px 20px;
->>>>>>> initial-styling-copy
 }
 
 #loginlink {
@@ -64,14 +60,6 @@
 	color: #BABABA;
 }
 
-<<<<<<< HEAD
-.bottom-border {
-	border: none;
-	border-bottom: 3px solid #BABABA;
-}
-
-=======
->>>>>>> initial-styling-copy
 .splash-bg {
 	background-image: url(../image/SplashScreen.png); 
 	-webkit-background-size: cover;
