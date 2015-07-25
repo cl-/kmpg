@@ -1,7 +1,8 @@
 angular.module('starter.controllers')
 
 .controller('MainCtrl', function($scope, $ionicModal, $timeout) {
-
+  $scope.user = $scope.user ||{};
+  $scope.data = $scope.data ||{};
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -23,7 +24,6 @@ angular.module('starter.controllers')
   }
 
 
-  $scope.data = $scope.data ||{};
   $scope.data.offers = $scope.testData.offers;
 
 });
