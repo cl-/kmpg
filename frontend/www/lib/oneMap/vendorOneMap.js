@@ -989,7 +989,7 @@ function showLocation(xVal, yVal) {
 
 function extentChangeAction(functionName) {
 
-    var OneMap = this.map
+    var OneMap = this.map;
     dojo.connect(OneMap, "onExtentChange", functionName)
 }
 
@@ -2114,8 +2114,6 @@ function splitDataandAddPoint(xyCord, lineCord, nameValue) {
 
 
 function addPointToMap(XY, infoWindowContent, iconURL) {
-
-
     var lon, lat;
     lon = XY.split(",")[0]
     lat = XY.split(",")[1]
