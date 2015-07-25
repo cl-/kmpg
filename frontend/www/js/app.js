@@ -94,6 +94,16 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
   })
 
 
+  .state('app.test_oneMap', {
+      url: '/test_oneMap',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/test_oneMap.html'
+        }
+      }
+  })
+
+
   .state('app.playlists', {
     url: '/playlists',
     views: {
