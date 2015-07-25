@@ -31,6 +31,16 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+
+  .state('app.register', {
+      url: '/register',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/register.html'
+        }
+      }
+  })
+
   .state('app.begin', {
       url: '/begin',
       views: {
@@ -38,7 +48,17 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
           templateUrl: 'templates/begin.html'
         }
       }
+  })  
+
+  .state('app.splashscreen', {
+      url: '/splashscreen',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/splashscreen.html'
+        }
+      }
   })
+
 
   .state('app.explore', {
       url: '/explore',

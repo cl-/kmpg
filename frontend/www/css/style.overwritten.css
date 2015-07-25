@@ -1,0 +1,94 @@
+.bar.bar-calm, 
+.tabs-striped.tabs-background-calm .tabs,
+.button.button-calm {
+	background-color: #4BB8DD;
+	border-color: transparent; 
+}
+
+.extra-header {
+	top: 100px;
+}
+
+.request-header {
+	color: #fff;
+	background-color: #f58410;
+}
+
+.event-header {
+	color: #fff;
+	background-color: #02baf2;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.moon-header {
+	color: #4A4A4A;
+	font-family: 'moonbold';
+	font-size: 24px;
+}
+
+.offer-header {
+	color: #fff;
+	background-color: #a88cd5;
+}
+
+.bg-trans {
+	background-image: none;
+	background-color: rgba(255, 255, 255, 0.4);;
+    border-color: transparent;
+}
+
+.border-right {
+	border-right: 2px solid white;
+}
+
+.padding-area {
+	padding: 10px 20px;
+}
+
+.large-padding-area {
+<<<<<<< HEAD
+	padding: 60px 20px;
+=======
+	padding: 60px 20px 10px 20px;
+>>>>>>> initial-styling-copy
+}
+
+#loginlink {
+	text-align: center;
+}
+
+#loginlink a {
+	color: #BABABA;
+}
+
+<<<<<<< HEAD
+.bottom-border {
+	border: none;
+	border-bottom: 3px solid #BABABA;
+}
+
+=======
+>>>>>>> initial-styling-copy
+.splash-bg {
+	background-image: url(../image/SplashScreen.png); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.singapore-bg {
+	border: none;
+	background-image: url(../image/singapore.svg); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;	
+}
+
+.image-container {
+	height: 200px;
+	overflow: hidden;
+	border: none
+}
