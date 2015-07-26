@@ -23,13 +23,21 @@ function addCommunityCentres(map) {
         success: function (data) {
             for (var i = 0; i < data.length; i++) {
                 var latLng = new google.maps.LatLng(data[i]['LATITUDE'], data[i]['LONGITUDE']);
+                var image = '../image/onepa-small.png';
                 var marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
-                    title: data[i]['NAME']
+                    animation: google.maps.Animation.DROP,
+                    title: data[i]['NAME'],
+                    icon: image
                 });
+                google.maps.event.addListener(marker, 'click', showActivity);
                 communityCentresMarkers.push(marker);
             }
         }
     })
+}
+
+function showActivity(a,b,c) {
+    console.log(a,b,c);
 }
