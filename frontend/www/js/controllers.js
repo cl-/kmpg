@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $http, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -41,12 +41,41 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller("OfferCtrl", function($scope, $http){
+  $scope.postOffer = function(){
+    var n = $scope.newOffer;
+    n.phone = $scope.user.phone;
+    n.endTime = toDBTime(n.endDate.getTime());
+    n.startLat = n.startLong = n.endLat = n.endLong = n.distRange = n.startTime = 0;
+    delete $scope.newOffer["locationStr"];
+    delete $scope.newOffer["validDaysNum"];
+    delete $scope.newOffer["endDate"];
+    console.log($scope.newOffer);
+  $http.post('http://mediscope.moxware.com/'+'offer/', $scope.newOffer
+  ).
+  success(function(data, status, headers, config) {
+    // this callback will be called asynchronously
+    // when the response is available
+    console.log(data, status, headers, config);
+  }).
+  error(function(data, status, headers, config) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    console.log(data, status, headers, config);
+  });
+
+  // $scope.newOffer = {};
+
+  }
+})
+
 .controller('PlaylistsCtrl', function($scope, $state) {
   console.log(document.getElementsByTagName("iframe")[0]);
   console.log(document.getElementsByTagName("qwerty")[0]);
   console.log(document.getElementsByTagName("ion-content")[0]);
   document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("iframe")[0]);
   document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("qwerty")[0]);
+
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },

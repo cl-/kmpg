@@ -34,6 +34,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
   })
 
   .state('app.register', {
+      cache: false,
       url: '/register',
       views: {
         'menuContent': {
@@ -43,6 +44,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
   })
 
   .state('app.begin', {
+      cache: false,
       url: '/begin',
       views: {
         'menuContent': {
@@ -52,6 +54,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
   })  
 
   .state('app.splashscreen', {
+      cache: false,
       url: '/splashscreen',
       views: {
         'menuContent': {
@@ -70,6 +73,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
       }
   })
   .state('app.request', {
+      cache: false,
       url: '/request',
       views: {
         'menuContent': {
@@ -78,10 +82,12 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
       }
   })
   .state('app.offer', {
+      cache: false,
       url: '/offer',
       views: {
         'menuContent': {
-          templateUrl: 'templates/offer.html'
+          templateUrl: 'templates/offer.html',
+          controller: "OfferCtrl"
         }
       }
   })
@@ -136,4 +142,6 @@ angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/splashscreen');
+  // $urlRouterProvider.otherwise('/app/splashscreen');
+  // $urlRouterProvider.otherwise('/app/explore');
 });

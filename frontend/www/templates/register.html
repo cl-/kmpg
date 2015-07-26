@@ -6,19 +6,19 @@
         </div>
         <label class="item item-input item-stacked-label">
           <span class="input-label">First Name</span>
-          <input type="text" placeholder="Eddie">
+          <input type="text" placeholder="Eddie" ng-init="user.firstName=''" ng-model="user.firstName">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Last Name</span>
-          <input type="text" placeholder="Lim">
+          <input type="text" placeholder="Lim" ng-init="user.lastName=''" ng-model="user.lastName">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Phone Number</span>
-          <input type="text" placeholder="(+65) ********">
+          <input type="text" placeholder="(+65) ********" ng-init="user.phone=''" ng-model="user.phone">
         </label>
       </div>
       <div class="padding-area">
-        <button class="button button-block button-calm">
+        <button class="button button-block button-calm" ng-click="goToState('app.begin',false)">
           Create Account
         </button>
       </div>

@@ -1,20 +1,20 @@
 <ion-view view-title="Explore">
 
   <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
-    <div class="tabs">
-      <a class="tab-item" ng-class="" ng-click="desiredFilter=['offers','requests','events']" href="#">ALL</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">OFFERS</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">REQUESTS</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">EVENTS</a>
+    <div class="tabs" ng-init="desiredFilter=['','offers','requests','events']">
+      <a class="tab-item" ng-class="{active :desiredFilter.length==4}" ng-click="desiredFilter=['','offers','requests','events']; scrollTop();" href="#">ALL</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='offers'}" ng-click="desiredFilter=['offers']; scrollTop();" href="#">OFFERS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='requests'}" ng-click="desiredFilter=['requests']; scrollTop();" href="#">REQUESTS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='events'}" ng-click="desiredFilter=['events']; scrollTop();" href="#">EVENTS</a>
     </div>
   </div>
 
   <ion-content class="extra-header">
-      <!-- our list and list items -->
-      <ion-list>
-
+  <!-- our list and list items -->
+    <ion-list>
+    
+    <!--  -->
       <div class="list card">
-
         <div class="item item-divider offer-header">
             Offer
         </div>
@@ -65,117 +65,16 @@
 
       </div>
 
-      <div class="list card" ng-click="">
-
-        <div class="item item-divider offer-header">
-            Offer
-        </div>
-
-          <div class="item item-avatar">
-            <img src="http://i.imgur.com/27L2QSM.png">
-            <h2>by Ali Ahmed</h2>
-            <p>596A Ang Mo Kio Street 52</p>
-          </div>
-
-        <div class="item item-image">
-          <img src="image/kuih.jpg">
-        </div>   
-
-        <div class="item item-body">
-          <h3>Giving Away Hari Raya Snacks</h3>
-          <p>
-            <i class="icon ion-ios-clock-outline"></i> 
-            Valid till July 30 2015
-            <br/>
-            <i class="icon ion-ios-location-outline"></i> 
-            596A Ang Mo Kio Street 52 #08-653
-          </p>
-          <p>
-            Hey guys, my family's celebrating Hari Raya by baking homemade Kuih Tart Gulung.
-            We would love to spread the festivity's joy by giving away these goodies too.
-            Please message me if you're interested.
-          </p>
-          <p>
-            <a href="#" class="subdued">1 Response</a>
-            <a href="#" class="subdued">5 Likes</a>
-          </p>
-        </div>
-
-        <div class="item tabs tabs-secondary tabs-icon-left">
-          <a class="tab-item" href="#">
-            <i class="icon ion-chatbox"></i>
-            Respond
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-ios-heart-outline"></i>
-            Like This
-          </a>
-        </div>
-
-      </div>      
-
-      </ion-list>
-
-      <ion-list>
-      <div class="list card" ng-click="">
-          <div class="item item-divider request-header">
-              Request
-          </div>   
-
-          <div class="item item-avatar">
-            <img src="http://i.imgur.com/FWvf5d0.png">
-            <h2>by John Tay Meng Gan</h2>
-            <p>532 Ang Mo Kio Ave 10</p>
-          </div>
-
-          <div class="item item-image">
-            <img src="image/psle.jpg">
-          </div>           
-
-          <div class="item item-body">
-            <h3>Need Math Tuition for P6 Kid</h3>
-            <p>
-              <i class="icon ion-ios-clock-outline"></i> 
-              by July 30 2015
-              <br/>
-              <i class="icon ion-ios-location-outline"></i> 
-              554 Ang Mo Kio Ave 10 #10-120
-            </p>
-            <p>
-              Hey guys, PSLE is just around the corner and I am trying to find a kind sould who is willing to
-              tutor my kid, who’s struggling really hard in some subejcts like Math &amp; Chinese. Willing to
-              pay as well. Pls message me if interested.
-            </p>
-            <p>
-            <a href="#" class="subdued">12 Responses</a>
-            <a href="#" class="subdued">5 Likes</a>
-            </p>
-          </div>
-
-          <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-              <i class="icon ion-chatbox"></i>
-              Respond
-            </a>
-            <a class="tab-item" href="#">
-              <i class="icon ion-ios-heart-outline"></i>
-              Like This
-            </a>
-          </div>
-        </div>
-      </ion-list>
-
-      <ion-list>
-
-        <div class="list card" ng-click="">
+      <!--  -->
+        <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('events') != -1">
           <div class="item item-divider event-header">
               Community Event
           </div>        
 
           <div class="item item-avatar">
-            <img src="http://i.imgur.com/3p6GnSa.png">
+            <img src="image/onepa.png">
             <h2>by One PA (People's Association)</h2>
-            <p>Pasir East Community Centre</p>
+            <p>Teck Ghee Community Centre</p>
           </div>
 
         <div class="item item-image">
@@ -189,12 +88,10 @@
               July 28 2015
               <br/>
               <i class="icon ion-ios-location-outline"></i> 
-              AMK Mall NTUC Foodfare
+              Teck Ghee NTUC Foodfare
             </p>
             <p>
-              Dear Ang Mo Kio residents, feel free to join us in the opening of
-              Elias Mall's new foodfare kopitiam outlet. Come join fellow residents
-              in light-hearted activities and mouth-watering, heavily-discounted local dishes.              
+              Dear Teck Ghee residents, come join fellow residents in light-hearted activities and mouth-watering, <em>heavily-discounted</em> local dishes sold at cost-price.
             </p>
             <p>
               <a href="#" class="subdued">20 Going</a>
@@ -218,8 +115,106 @@
           </div>
         </div>
 
+      <!--  -->
+        <div class="list card" ng-repeat="offer in data.offers" ng-click="" ng-show="desiredFilter.indexOf('offers') != -1">
+          <div class="item item-divider offer-header" ng-show="desiredFilter.indexOf(offer.entryType) != -1">
+              Offer
+          </div>
 
-        <div class="list card" ng-click="">
+          <div class="item item-avatar">
+            <img src="image/{{offer.firstName}}.png">
+            <h2>by {{offer.firstName}} {{offer.lastName}}</h2>
+            <p>{{offer.neighborhood}}</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="image/kuih.jpg">
+          </div>   
+
+          <div class="item item-body">
+            <h3>Giving Away Hari Raya Snacks</h3>
+            <p>
+              <i class="icon ion-ios-clock-outline"></i> 
+              Valid till July 30 2015
+              <br/>
+              <i class="icon ion-ios-location-outline"></i> 
+              {{offer.neighborhood}} Street 15
+            </p>
+            <p>
+              Hey guys, my family's celebrating Hari Raya by baking homemade Kuih Tart Gulung.
+              We would love to spread the festivity's joy by giving away these goodies too.
+              Please message me if you're interested.
+            </p>
+            <p>
+              <a href="#" class="subdued">1 Response</a>
+              <a href="#" class="subdued">5 Likes</a>
+            </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Respond
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-ios-heart-outline"></i>
+              Like This
+            </a>
+          </div>
+
+        </div>
+
+      <!--  -->
+      <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('requests') != -1">
+          <div class="item item-divider request-header">
+              Request
+          </div>        
+
+          <div class="item item-avatar">
+            <img src="image/ali.png">
+            <h2>by Ali Ahmed</h2>
+            <p>Pasir Ris Drive 7</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="image/psle.jpg">
+          </div>           
+
+          <div class="item item-body">
+            <h3>Need Math Tuition for P6 Kid</h3>
+            <p>
+              <i class="icon ion-ios-clock-outline"></i> 
+              by July 30 2015
+              <br/>
+              <i class="icon ion-ios-location-outline"></i> 
+              Simei Drive 15 blk 210 #08-120
+            </p>
+            <p>
+              Hey guys, PSLE is just around the corner and I am trying to find a kind sould who is willing to
+              tutor my kid, who’s struggling really hard in some subejcts like Math &amp; Chinese. Willing to
+              pay as well. Pls message me if interested.
+            </p>
+            <p>
+            <a href="#" class="subdued">12 Responses</a>
+            <a href="#" class="subdued">5 Likes</a>
+            </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Respond
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-ios-heart-outline"></i>
+              Like This
+            </a>
+          </div>
+        </div>
+
+
+      <!--  -->
+        <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('events') != -1">
           <div class="item item-divider event-header">
               Neighbour Event
           </div>        

@@ -8,7 +8,7 @@
     </div>
 
     <label class="item item-input center" style="width:50%">
-      <input class="center-text" type="number" placeholder="Enter ZIP Code">
+      <input class="center-text" type="number" placeholder="Enter ZIP Code" ng-model="user.zipCode">
     </label>
 
     <br/>
@@ -17,7 +17,7 @@
       <img src="../image/singapore.svg">
     </div>
     <div class="padding-area">
-      <button class="button button-block button-calm">
+      <button class="button button-block button-calm" ng-click="goToState('app.explore',false)">
         Start Exploring
       </button>
     </div>
