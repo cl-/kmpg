@@ -72,6 +72,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
       }
   })
   .state('app.request', {
+      cache: false,
       url: '/request',
       views: {
         'menuContent': {
@@ -80,10 +81,12 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
       }
   })
   .state('app.offer', {
+      cache: false,
       url: '/offer',
       views: {
         'menuContent': {
-          templateUrl: 'templates/offer.html'
+          templateUrl: 'templates/offer.html',
+          controller: "OfferCtrl"
         }
       }
   })

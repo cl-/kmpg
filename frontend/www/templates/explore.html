@@ -2,10 +2,10 @@
 
   <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
     <div class="tabs" ng-init="desiredFilter=['','offers','requests','events']">
-      <a class="tab-item" ng-class="{active :desiredFilter.length==4}" ng-click="desiredFilter=['','offers','requests','events']" href="#">ALL</a>
-      <a class="tab-item" ng-class="{active :desiredFilter[0]=='offers'}" ng-click="desiredFilter=['offers']" href="#">OFFERS</a>
-      <a class="tab-item" ng-class="{active :desiredFilter[0]=='requests'}" ng-click="desiredFilter=['requests']" href="#">REQUESTS</a>
-      <a class="tab-item" ng-class="{active :desiredFilter[0]=='events'}" ng-click="desiredFilter=['events']" href="#">EVENTS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter.length==4}" ng-click="desiredFilter=['','offers','requests','events']; scrollTop();" href="#">ALL</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='offers'}" ng-click="desiredFilter=['offers']; scrollTop();" href="#">OFFERS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='requests'}" ng-click="desiredFilter=['requests']; scrollTop();" href="#">REQUESTS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='events'}" ng-click="desiredFilter=['events']; scrollTop();" href="#">EVENTS</a>
     </div>
   </div>
 
