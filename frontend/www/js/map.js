@@ -1,11 +1,21 @@
 var map;
 var communityCentresMarkers = [];
+var activites = [];
 
 $(document).ready(function () {
     initMap();
-    addCommunityCentres(map);
+    loadActivities();
 });
 
+function loadActivities() {
+    $.ajax({
+        url: "data/activities.json",
+        success: function (data) {
+            activites = data;
+            addCommunityCentres(map);
+        }
+    })
+}
 
 function initMap() {
     var mapOptions = {
@@ -31,13 +41,48 @@ function addCommunityCentres(map) {
                     title: data[i]['NAME'],
                     icon: image
                 });
-                google.maps.event.addListener(marker, 'click', showActivity);
+
+                for (var j = 0; j < activites.length; j++) {
+                    if (data[i]['NAME'].toLowerCase() === activites[j]['communityCentre'].toLowerCase()) {
+                        var infowindow = new google.maps.InfoWindow({
+                            content: activites[j]['activities'].join()
+                        });
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.open(map, marker);
+                        });
+                        break;
+                    }
+
+                }
+
+                //google.maps.event.addListener(marker, 'click', showActivity);
                 communityCentresMarkers.push(marker);
             }
         }
-    })
+    });
 }
 
-function showActivity(a,b,c) {
-    console.log(a,b,c);
+function showActivity(marker) {
+    var lat = marker.latLng.A;
+    var lng = marker.latLng.F;
+    for (var i = 0; i < communityCentresMarkers.length; i++) {
+        if (communityCentresMarkers[i]['internalPosition']['A'] === lat &&
+            communityCentresMarkers[i]['internalPosition']['F'] === lng) {
+            var cc = communityCentresMarkers[i]['title'];
+            for (var i = 0; i < activites.length; i++) {
+                if (cc === activites[i]['communityCentre']) {
+                    var infowindow = new google.maps.InfoWindow({
+                        content: activites.join()
+                    });
+                    google.maps.event.addListener(marker, 'click', function () {
+                        infowindow.open(map, marker);
+                    });
+                    break;
+                }
+            }
+
+
+            break;
+        }
+    }
 }
