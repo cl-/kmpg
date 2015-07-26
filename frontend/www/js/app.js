@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module("kmpg", ['ionic', 'starter.controllers'])
+angular.module("kmpg", ['ionic', 'starter.controllers', 'ui.router'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,7 +22,8 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.forwardCache(false);
   $stateProvider
 
   .state('app', {
@@ -113,6 +114,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
 
 
   .state('app.playlists', {
+    cache: false,
     url: '/playlists',
     views: {
       'menuContent': {

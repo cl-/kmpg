@@ -41,9 +41,10 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  console.log(document.getElementsByTagName("iframe"));
-  console.log(document.getElementsByTagName("qwerty"));
+.controller('PlaylistsCtrl', function($scope, $state) {
+  console.log(document.getElementsByTagName("iframe")[0]);
+  console.log(document.getElementsByTagName("qwerty")[0]);
+  console.log(document.getElementsByTagName("ion-content")[0]);
   document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("iframe")[0]);
   document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("qwerty")[0]);
   $scope.playlists = [
