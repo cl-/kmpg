@@ -102,6 +102,14 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
         }
       }
   })
+  .state('app.test_googleMap', {
+      url: '/test_googleMap',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/test_googleMap.html'
+        }
+      }
+  })
 
 
   .state('app.playlists', {
@@ -123,6 +131,8 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
+  // $urlRouterProvider.otherwise('/app/splashscreen');
   $urlRouterProvider.otherwise('/app/explore');
 });

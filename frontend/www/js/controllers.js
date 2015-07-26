@@ -42,6 +42,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
+  console.log(document.getElementsByTagName("iframe"));
+  console.log(document.getElementsByTagName("qwerty"));
+  document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("iframe")[0]);
+  document.getElementsByTagName("ion-content")[0].appendChild(document.getElementsByTagName("qwerty")[0]);
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
