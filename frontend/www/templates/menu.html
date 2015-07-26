@@ -19,29 +19,31 @@
     <ion-content>
       <ion-list>
         <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item menu-close href="#/app/explore">
-          Explore
-        </ion-item>
-        <ion-item menu-close href="#/app/request">
-          Add Request
-        </ion-item>
-        <ion-item menu-close href="#/app/offer">
-          Offer Help
-        </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlists
+          <i class="icon ion-person"></i> Profile
         </ion-item>
         <ion-item menu-close href="#/app/settings">
-          Settings
+          <i class="icon ion-ios-gear-outline"></i> Settings
+        </ion-item>        
+        <ion-item menu-close href="#/app/explore">
+          <i class="icon ion-map"></i> Explore
         </ion-item>
         <ion-item menu-close href="#/app/splashscreen">
-          Begin
+          <i class="icon ion-ios-list-outline"></i> My Activities
         </ion-item>
-        <ion-item menu-close href="#/app/test_oneMap" onclick="rfc(this)">
-          Test OneMap
+
+        <div class="item item-divider">
+          Create Activities
+        </div>
+
+        <ion-item menu-close href="#/app/request" class="request-color">
+          <i class="icon ion-android-add-circle"></i> Make New Request
         </ion-item>
+        <ion-item menu-close href="#/app/offer" class="offer-color">
+          <i class="icon ion-android-add-circle"></i> Make New Offer
+        </ion-item>
+        <ion-item menu-close href="#/app/offer" class="event-color">
+          <i class="icon ion-android-add-circle"></i> Make New Event
+        </ion-item>        
       </ion-list>
     </ion-content>
   </ion-side-menu>
