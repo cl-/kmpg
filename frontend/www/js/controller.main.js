@@ -1,8 +1,19 @@
 angular.module('starter.controllers')
 
-.controller('MainCtrl', function($scope, $ionicModal, $timeout) {
+.controller('MainCtrl', function($scope, $ionicModal, $state,$ionicViewService, $timeout) {
   $scope.user = $scope.user ||{};
   $scope.data = $scope.data ||{};
+  $scope.goToState = function(stateName, enableBack){
+    if(typeof enableBack == 'undefined'){
+      enableBack = true;
+    }
+    $state.go(stateName);
+    if(!enableBack){
+      $ionicViewService.nextViewOptions({
+          disableBack: true
+      });
+    }
+  }
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),

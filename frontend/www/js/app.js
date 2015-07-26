@@ -33,6 +33,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
   })
 
   .state('app.register', {
+      cache: false,
       url: '/register',
       views: {
         'menuContent': {
@@ -42,6 +43,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
   })
 
   .state('app.begin', {
+      cache: false,
       url: '/begin',
       views: {
         'menuContent': {
@@ -51,6 +53,7 @@ angular.module("kmpg", ['ionic', 'starter.controllers'])
   })  
 
   .state('app.splashscreen', {
+      cache: false,
       url: '/splashscreen',
       views: {
         'menuContent': {
