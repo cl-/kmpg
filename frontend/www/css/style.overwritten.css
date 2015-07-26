@@ -9,14 +9,27 @@
 	top: 100px;
 }
 
+.calm-header {
+	color: #fff;
+	background-color: #4BB8DD;
+}
+
 .request-header {
 	color: #fff;
 	background-color: #f58410;
 }
 
+.request-color {
+	color: #f58410;
+}
+
 .event-header {
 	color: #fff;
-	background-color: #02baf2;
+	background-color: #3eb5ac;
+}
+
+.event-color {
+	color: #3eb5ac;
 }
 
 .center-text {
@@ -32,6 +45,10 @@
 .offer-header {
 	color: #fff;
 	background-color: #a88cd5;
+}
+
+.offer-color {
+	color: #a88cd5;
 }
 
 .bg-trans {
@@ -79,4 +96,9 @@
 	height: 200px;
 	overflow: hidden;
 	border: none
+}
+
+.button.button-full.no-margin {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
