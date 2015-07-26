@@ -2,18 +2,10 @@
 
   <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
     <div class="tabs">
-      <a class="tab-item active" href="#">
-        ALL
-      </a>
-      <a class="tab-item" href="#">
-        OFFERS
-      </a>      
-      <a class="tab-item" href="#">
-        REQUESTS
-      </a>
-      <a class="tab-item" href="#">
-        EVENTS
-      </a>
+      <a class="tab-item" ng-class="" ng-click="desiredFilter=['offers','requests','events']" href="#">ALL</a>
+      <a class="tab-item" ng-click="desiredFilter" href="#">OFFERS</a>
+      <a class="tab-item" ng-click="desiredFilter" href="#">REQUESTS</a>
+      <a class="tab-item" ng-click="desiredFilter" href="#">EVENTS</a>
     </div>
   </div>
 
