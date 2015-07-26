@@ -13,7 +13,59 @@
       <!-- our list and list items -->
       <ion-list>
 
-      <div class="list card" ng-repeat="offer in data.offers" ng-click="">
+      <div class="list card">
+
+        <div class="item item-divider offer-header">
+            Offer
+        </div>
+
+          <div class="item item-avatar">
+            <img src="http://i.imgur.com/Qh3tapN.png">
+            <h2>by Janet Lee Chin Min</h2>
+            <p>596A Ang Mo Kio Street 54</p>
+          </div>
+
+        <div class="item item-image">
+          <img src="image/map.png">
+        </div>   
+
+        <div class="item item-body">
+          <h3>Carpooling Ride to Clarke Quay Area</h3>
+          <p>
+            <i class="icon ion-ios-clock-outline"></i> 
+            July 26 2015 6:00pm
+            <br/>
+            <i class="icon ion-ios-location-outline"></i> 
+            From: Ang Mo Kio Mall
+            <br/>
+            <i class="icon ion-ios-location-outline"></i> 
+            To: Novotel Singapore Clarke Quay
+          </p>
+          <p>
+            Hey guys, I'm heading to Novotel later in the evening. Let me know if anyone
+            needs a ride there too. I can pick you guys later at AMK Mall. My car can only fit up
+            to 4 people though, so be quick!
+          </p>
+          <p>
+            <a href="#" class="subdued">1 Response</a>
+            <a href="#" class="subdued">2 Likes</a>
+          </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Respond
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-ios-heart-outline"></i>
+            Like This
+          </a>
+        </div>
+
+      </div>
+
+      <div class="list card" ng-click="">
 
         <div class="item item-divider offer-header">
             Offer
@@ -60,7 +112,7 @@
           </a>
         </div>
 
-      </div>
+      </div>      
 
       </ion-list>
 
