@@ -1,71 +1,121 @@
 <ion-view view-title="Explore">
 
   <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
-    <div class="tabs">
-      <a class="tab-item" ng-class="" ng-click="desiredFilter=['offers','requests','events']" href="#">ALL</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">OFFERS</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">REQUESTS</a>
-      <a class="tab-item" ng-click="desiredFilter" href="#">EVENTS</a>
+    <div class="tabs" ng-init="desiredFilter=['','offers','requests','events']">
+      <a class="tab-item" ng-class="{active :desiredFilter.length==4}" ng-click="desiredFilter=['','offers','requests','events']" href="#">ALL</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='offers'}" ng-click="desiredFilter=['offers']" href="#">OFFERS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='requests'}" ng-click="desiredFilter=['requests']" href="#">REQUESTS</a>
+      <a class="tab-item" ng-class="{active :desiredFilter[0]=='events'}" ng-click="desiredFilter=['events']" href="#">EVENTS</a>
     </div>
   </div>
 
   <ion-content class="extra-header">
-      <!-- our list and list items -->
-      <ion-list>
+  <!-- our list and list items -->
+    <ion-list>
 
-      <div class="list card" ng-repeat="offer in data.offers" ng-click="">
+      <!--  -->
+        <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('events') != -1">
+          <div class="item item-divider event-header">
+              Community Event
+          </div>        
 
-        <div class="item item-divider offer-header">
-            Offer
-        </div>
-
-        <div class="item item-avatar">
-          <img src="image/{{offer.firstName}}.png">
-          <h2>by {{offer.firstName}} {{offer.lastName}}</h2>
-          <p>{{offer.neighborhood}}</p>
-        </div>        
+          <div class="item item-avatar">
+            <img src="image/onepa.png">
+            <h2>by One PA (People's Association)</h2>
+            <p>Teck Ghee Community Centre</p>
+          </div>
 
         <div class="item item-image">
-          <img src="image/kuih.jpg">
-        </div>   
-
-        <div class="item item-body">
-          <h3>Giving Away Hari Raya Snacks</h3>
-          <p>
-            <i class="icon ion-ios-clock-outline"></i> 
-            Valid till July 30 2015
-            <br/>
-            <i class="icon ion-ios-location-outline"></i> 
-            {{offer.neighborhood}} Street 15
-          </p>
-          <p>
-            Hey guys, my family's celebrating Hari Raya by baking homemade Kuih Tart Gulung.
-            We would love to spread the festivity's joy by giving away these goodies too.
-            Please message me if you're interested.
-          </p>
-          <p>
-            <a href="#" class="subdued">1 Response</a>
-            <a href="#" class="subdued">5 Likes</a>
-          </p>
+          <img src="image/foodfare.jpg">
         </div>
 
-        <div class="item tabs tabs-secondary tabs-icon-left">
-          <a class="tab-item" href="#">
-            <i class="icon ion-chatbox"></i>
-            Respond
-          </a>
-          <a class="tab-item" href="#">
-            <i class="icon ion-ios-heart-outline"></i>
-            Like This
-          </a>
+          <div class="item item-body">
+            <h3>NTUC Foodfare Gathering</h3>
+            <p>
+              <i class="icon ion-ios-clock-outline"></i> 
+              July 28 2015
+              <br/>
+              <i class="icon ion-ios-location-outline"></i> 
+              Teck Ghee NTUC Foodfare
+            </p>
+            <p>
+              Dear Teck Ghee residents, come join fellow residents in light-hearted activities and mouth-watering, <em>heavily-discounted</em> local dishes sold at cost-price.
+            </p>
+            <p>
+              <a href="#" class="subdued">20 Going</a>
+              <a href="#" class="subdued">30 Likes</a>
+            </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-calendar"></i>
+              Join Event
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Enquiry
+            </a>             
+            <a class="tab-item" href="#">
+              <i class="icon ion-ios-heart-outline"></i>
+              Like This
+            </a>
+          </div>
         </div>
 
-      </div>
 
-      </ion-list>
+      <!--  -->
+        <div class="list card" ng-repeat="offer in data.offers" ng-click="" ng-show="desiredFilter.indexOf('offers') != -1">
 
-      <ion-list>
-      <div class="list card" ng-click="">
+          <div class="item item-divider offer-header" ng-show="desiredFilter.indexOf(offer.entryType) != -1">
+              Offer
+          </div>
+
+          <div class="item item-avatar">
+            <img src="image/{{offer.firstName}}.png">
+            <h2>by {{offer.firstName}} {{offer.lastName}}</h2>
+            <p>{{offer.neighborhood}}</p>
+          </div>
+
+          <div class="item item-image">
+            <img src="image/kuih.jpg">
+          </div>   
+
+          <div class="item item-body">
+            <h3>Giving Away Hari Raya Snacks</h3>
+            <p>
+              <i class="icon ion-ios-clock-outline"></i> 
+              Valid till July 30 2015
+              <br/>
+              <i class="icon ion-ios-location-outline"></i> 
+              {{offer.neighborhood}} Street 15
+            </p>
+            <p>
+              Hey guys, my family's celebrating Hari Raya by baking homemade Kuih Tart Gulung.
+              We would love to spread the festivity's joy by giving away these goodies too.
+              Please message me if you're interested.
+            </p>
+            <p>
+              <a href="#" class="subdued">1 Response</a>
+              <a href="#" class="subdued">5 Likes</a>
+            </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-chatbox"></i>
+              Respond
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-ios-heart-outline"></i>
+              Like This
+            </a>
+          </div>
+
+        </div>
+
+      <!--  -->
+      <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('requests') != -1">
           <div class="item item-divider request-header">
               Request
           </div>        
@@ -111,63 +161,10 @@
             </a>
           </div>
         </div>
-      </ion-list>
-
-      <ion-list>
-
-        <div class="list card" ng-click="">
-          <div class="item item-divider event-header">
-              Community Event
-          </div>        
-
-          <div class="item item-avatar">
-            <img src="image/onepa.png">
-            <h2>by One PA (People's Association)</h2>
-            <p>Pasir East Community Centre</p>
-          </div>
-
-        <div class="item item-image">
-          <img src="image/foodfare.jpg">
-        </div>
-
-          <div class="item item-body">
-            <h3>NTUC Foodfare Gathering</h3>
-            <p>
-              <i class="icon ion-ios-clock-outline"></i> 
-              July 28 2015
-              <br/>
-              <i class="icon ion-ios-location-outline"></i> 
-              Pasir Ris Elias NTUC Foodfare
-            </p>
-            <p>
-              Dear Pasir Ris residents, feel free to join us in the opening of
-              Elias Mall's new foodfare kopitiam outlet. Come join fellow residents
-              in light-hearted activities and mouth-watering, heavily-discounted local dishes.              
-            </p>
-            <p>
-              <a href="#" class="subdued">20 Going</a>
-              <a href="#" class="subdued">30 Likes</a>
-            </p>
-          </div>
-
-          <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-              <i class="icon ion-calendar"></i>
-              Join Event
-            </a>
-            <a class="tab-item" href="#">
-              <i class="icon ion-chatbox"></i>
-              Enquiry
-            </a>             
-            <a class="tab-item" href="#">
-              <i class="icon ion-ios-heart-outline"></i>
-              Like This
-            </a>
-          </div>
-        </div>
 
 
-        <div class="list card" ng-click="">
+      <!--  -->
+        <div class="list card" ng-click="" ng-show="desiredFilter.indexOf('events') != -1">
           <div class="item item-divider event-header">
               Neighbour Event
           </div>        

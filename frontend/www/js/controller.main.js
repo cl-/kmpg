@@ -23,8 +23,8 @@ angular.module('starter.controllers')
 
   $scope.testData = $scope.testData ||{};
   $scope.testData.offers = [
-    new Offer('ride',1,2,3,4, 'John',12345678,'Jurong'),
-    new Offer('ride',5,6,7,8, 'Jane',12345678,'Bishan')
+    new Offer('ride',1,2,3,4, 'John',12345678,'Jurong')
+    // new Offer('ride',5,6,7,8, 'Jane',12345678,'Bishan')
   ];
   function Offer(){
     var attrList = "entryType, startLat,startLon, endLat,endLon, firstName,phone,neighborhood".split(','); //zipCode //lastName
